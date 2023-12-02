@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+
+.hidden {
+    display: none;
+}
+
+p {
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #ccc;
+    display: grid;
+    place-items: center;
+}
+
+#buttons, #page-buttons {
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+    align-items: center;
+}
+

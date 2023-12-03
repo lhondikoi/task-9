@@ -23,12 +23,20 @@ function paginate(currentPage, itemsPerPage, contentArray) {
             contentArray[i].classList.remove('hidden')
         }
     }
+
+    let pageButtons = document.querySelectorAll('.page-button')
+    pageButtons.forEach((elem, index)=> {
+        if (currentPage - 1 == index) {
+            elem.classList.add('current')
+        } else {
+            elem.classList.remove('current')
+        }
+    })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-        paginate(currentPage, itemsPerPage, rows)
-        let pages = Math.ceil(rows.length / itemsPerPage)
-        let pageButtonsContainer = document.querySelector('#page-buttons')
+    let pages = Math.ceil(rows.length / itemsPerPage)
+    let pageButtonsContainer = document.querySelector('#page-buttons')
         for (let i=1; i <= pages; i++) {
             let pageButton = document.createElement('span')
             pageButton.innerText = i
@@ -43,4 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 paginate(currentPage, itemsPerPage, rows)
             })
         })
+        paginate(currentPage, itemsPerPage, rows)
     })
